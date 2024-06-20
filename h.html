@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Early Stage Lung Cancer Detection</title>
+
+    <!-- Add this inside the <head> tag -->
+   
+</head>
+<body>
+    <header>
+        <div class="logo-nav">
+            <b><span style="color: brown; font-size: 30px;">Disease</span> <span style="color: aliceblue; font-size: 20px;">Pre</span></b> 
+            <nav>
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="#box">Predict</a>
+                <a href="#">About</a>
+            </nav>
+        </div>
+        <style>
+    
+        
+            #resultContent {
+                text-align: center;
+                align-items: center;
+            }
+        </style>
+    </header>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="/static/image4.webp" alt="Lungs Image" class="image">
+            <div class="overlay">
+                <div class="info" id="info">
+                    Early Stage Lung Cancer <br>
+                    Detection using Deep Learning <br><br><br>
+                    <p>
+
+                    
+                    Lung cancer is a type of cancer that begins in the lungs. 
+                    Your lungs are two spongy organs in your chest that take in oxygen 
+                    when you inhale and release carbon dioxide when you exhale.
+                    Lung cancer is the leading cause of cancer deaths worldwide.
+                    Each day, the disease takes 350 lives — more than breast, prostate, and pancreatic 
+                    cancers combined. Lung cancer also kills 2.5 times more people than colorectal cancer,
+                     the second leading cause of cancer death in America¹.
+</p>
+    
+                </div>
+                <div class="read-more-btn" onclick="toggleInfo()">Read More</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lung-info-container">
+        <div class="lung-image">
+            <img class="conimg" src="static/deep.jpeg" height="300px" width="400px" alt="Lungs">
+        </div>
+        <div class="lung-stats">
+            <h2>Why Deep Learnings?</h2>
+            <p>
+                Deep learning is employed for predicting lung cancer due to its ability to analyze 
+                complex patterns and features within medical imaging data, such as CT scans. Lung 
+                cancer detection often involves identifying subtle abnormalities and early-stage 
+                indicators, which can be challenging for traditional methods. Deep learning algorithms,
+                 especially convolutional neural networks (CNNs), excel at automatically learning hierarchical
+                  representations of data, making them well-suited for image classification tasks. Their capacity
+                   to discern intricate details in medical images contributes to more accurate and efficient 
+                   lung cancer diagnosis, aiding in early detection and improved patient outcomes.</p>
+        </div>
+    </div>
+
+    <!-- Creating cards -->
+    <div class="container_card">
+        <div class="card_card">
+            <center><h2>Algorithms</h2></center> 
+            <p>
+                We explored various deep learning image classification algorithms,
+                 including VGG, ResNet, DenseNet, Alexnet and GoogleNet. 
+                 For object detection, we compared YOLOv5 and YOLOv8. 
+                 After comprehensive evaluation, VGG16 emerged as the final choice, 
+                 demonstrating superior performance in our image classification task. 
+                 This selection reflects the model's ability to effectively identify patterns 
+                 indicative of lung cancer in medical imaging data.
+        </div>
+        <div class="card_card">
+            <center><h2>Causes of Lung Cancer</h2></center> 
+            <p>
+                Lung cancer develops when abnormal cells in the lungs grow 
+                out of control. Smoking is the primary cause, 
+                with exposure to secondhand smoke, environmental 
+                pollutants, and radon gas also contributing. Additionally,
+                 genetic factors and pre-existing lung diseases may 
+                 increase the risk. Early detection through screening 
+                 and adopting a smoke-free lifestyle are crucial in preventing and managing 
+                 lung cancer.
+            </p>
+        </div>
+        <div class="card_card">
+            <center><h2>Prevention Methods</h2></center> 
+            <p>
+                Preventing lung cancer involves steering clear of tobacco,
+                 including smoking and smokeless forms. Reducing exposure to 
+                 secondhand smoke, asbestos, and radon is crucial. Embracing
+                  a healthy lifestyle with regular exercise and a balanced diet
+                   adds an extra layer of protection. Staying informed about workplace
+                    hazards and taking necessary precautions complements these efforts, 
+                    collectively promoting lung health and minimizing cancer risks.    
+            </p>
+        </div>
+    </div>
+
+    <!-- Performance matrix container -->
+    <div class="lung-info-container_per">
+        <div class="lung-image_per">
+            <img class="conimg_per" src="static/performancecompare.png" height="300px" width="400px" alt="Lungs">
+        </div>
+        <div class="lung-stats_per">
+            <h2>Performance Matrix</h2>
+            <p>
+                Comparing the performance metrics before and after optimization provides valuable insights into the effectiveness of the optimization strategies employed. It helps gauge the model's improvement in making accurate predictions and its overall robustness. Such a comparison is essential for researchers and practitioners seeking to enhance the model's performance for real-world applications in lung cancer detection.
+            </p>
+        </div>
+    </div>
+
+    <!-- Prediction form -->
+    <!-- <div class="box" id="box">
+        <div class="card_pre">
+            <h2>Lung Cancer Detection</h2>
+            <form style="font-size: 12px;" action="/upload" method="post" enctype="multipart/form-data">
+                <input style="font-size: 12px;" type="file" name="file" accept=".jpg, .jpeg, .png" required>
+                <button type="submit">Detect Lung Cancer</button>
+            </form>
+        </div>
+    </div> -->
+
+   
+    <!-- <div class="resultbody"></div>
+    <div class="result-container">
+        <h1>Image Classifier Result</h1>
+        {% if result == 'Malignant' %}
+            <div class="result-malignant">
+                The uploaded image is classified as: {{ result }}
+            </div>
+        {% elif result == 'Normal' %}
+            <div class="result-normal">
+                The uploaded image is classified as: {{ result }}
+            </div>
+        {% elif result == 'Benign' %}
+            <div class="result-benign">
+                The uploaded image is classified as: {{ result }}
+            </div>
+        {% else %}
+            <p>No result.</p>
+        {% endif %}
+    </div> -->
+    <!-- updated code/////// -->
+    <div class="box" id="box">
+        <div class="card_pre">
+            <h2>Lung Cancer Detection</h2>
+            <form style="font-size: 12px;" action="/upload" method="post" enctype="multipart/form-data" id="uploadForm">
+                <input style="font-size: 12px;" type="file" name="file" accept=".jpg, .jpeg, .png" required>
+                <button type="submit" onclick="detectLungCancer()">Detect Lung Cancer</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="result-container" id="resultContainer" style="display: none; text-align: center;">
+        <h1>Image Classifier Result</h1>
+        
+        <!-- Display uploaded image -->
+        <div id="uploadedImageContainer" style="text-align: center;">
+            <img src="/static/temp.jpg" height="300px" width="300px" alt="Uploaded Image" id="uploadedImage">
+        </div>
+        
+    
+        <div style="text-align: center; align-items: center;" id="resultContent" >
+            <!-- Result content will be dynamically updated here -->
+        </div>
+    </div>
+    
+    <script>
+        function detectLungCancer() {
+            // Assuming you use AJAX to submit the form and get the result
+            // You need to replace the following with your actual implementation
+            // This is just a placeholder
+            var result = "Malignant"; // Replace with the actual result from your server
+            var dynamicImagePath = "/static/temp.jpg"; // Replace with the dynamic path to the uploaded image
+    
+            // Update the result container with the result and dynamic image path
+            var resultContainer = document.getElementById("resultContainer");
+            var resultContent = document.getElementById("resultContent");
+            var uploadedImageContainer = document.getElementById("uploadedImageContainer");
+            var uploadedImage = document.getElementById("uploadedImage");
+    
+            // Set the source of the uploaded image dynamically
+            uploadedImage.src = dynamicImagePath;
+    
+            // Display the uploaded image container
+            uploadedImageContainer.style.display = "block";
+    
+            if (result == 'Malignant') {
+                resultContent.innerHTML = '<div class="result-malignant" >The uploaded image is classified as: Malignant</div>';
+            } else if (result == 'Normal') {
+                resultContent.innerHTML = '<div class="result-normal" >The uploaded image is classified as: Normal</div>';
+            } else if (result == 'Benign') {
+                resultContent.innerHTML = '<div class="result-benign">The uploaded image is classified as: Benign</div>';
+            } else {
+                resultContent.innerHTML = '<p>No result.</p>';
+            }
+    
+            // Display the result container
+            resultContainer.style.display = "block";
+        }
+    </script>
+     
+
+    <!-- till here -->
+
+   <script>
+       function updateResult(result) {
+    console.log(result);
+    var resultContainer = document.getElementById('resultContainer');
+    var resultContent = document.getElementById('resultContent');
+
+    if (result) {
+        resultContainer.style.display = 'block';
+        resultContent.innerHTML = '<p>The uploaded image is classified as: ' + result + '</p>';
+
+        // Use setTimeout to ensure the DOM is updated before scrolling
+        setTimeout(() => {
+            window.scrollTo(0, document.body.scrollHeight);
+        }, 100);
+    } else {
+        resultContainer.style.display = 'none';
+    }
+} 
+
+function toggleInfo() {
+    var info = document.getElementById('info');
+    info.classList.toggle('expand');
+}
+
+    </script>
+
+{% if result %}
+<script>
+    updateResult('{{ result }}');
+</script>
+{% endif %}
+
+    <footer>
+        <p style="text-align: center;">&copy; 2023 @Group 27. All rights reserved.</p>
+    </footer>
+</body>
+</html>

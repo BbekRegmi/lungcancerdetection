@@ -1,0 +1,374 @@
+body {
+    margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #bbbbbb;
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+header {
+    background-color: #333; /* Adjust color as needed */
+    padding: 10px;
+}
+
+.logo-nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    align-items: center;
+}
+
+
+.logo span {
+    color: #fff; /* Adjust text color as needed */
+    font-size: 1.2em; /* Adjust font size as needed */
+}
+
+nav {
+    display: flex;
+    z-index: 100px;
+}
+
+nav a {
+    color: #fff; /* Adjust text color as needed */
+    text-decoration: none;
+    margin: 0 15px; /* Adjust spacing as needed */
+}
+
+
+/* for the big image of web  */
+
+.container {
+    position: relative;
+    width: 100%;
+    
+    margin: 0 auto;
+  }
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .read-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    background-color: #3498db;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .info {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    overflow: hidden;
+    max-height: 100px; /* Set a fixed height for the incomplete section */
+    transition: max-height 0.5s ease; /* Add smooth transition effect */
+  }
+
+  .info.expand {
+    max-height: none; /* Expand to full height when the expand class is added */
+  }
+
+
+        .lung-info-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f6f2f2;;
+
+            width:95%;
+             /* Adjust as needed */
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd; /* Add a border for better visibility */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a box shadow for better aesthetics */
+            margin-top: 20px; /* Adjust spacing as needed */
+        }
+
+        .lung-image {
+            max-width: 100%; /* Adjust image size as needed */
+            border-radius: 8px; /* Optional: Add rounded corners to the image */
+        }
+
+        .lung-stats {
+            max-width: 100%; /* Adjust text size as needed */
+        }
+        .conimg{
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+
+
+        /* cards css */
+
+        
+         
+          /* performance css */
+
+          .lung-info-container_per {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: auto;
+            background: #f6f2f2;;
+            width: 95%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+           
+        }
+        
+        .lung-image_per {
+            max-width: 60%;
+            border-radius: 8px;
+            order: 2;
+            animation: fadeIn 1s ease-out;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .lung-stats_per {
+            max-width: 100%;
+            order: 1; /* Updated to move the text to the left */
+        }
+        
+        .conimg_per {
+            border-radius: 20px;
+            margin-left: 10px; /* Adjusted margin to separate the image from the text */
+        }
+        /* predict css */
+
+        .box{
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                background-color: #bbbbbb;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50vh;
+              
+          
+        }
+  
+      .card {
+        width: 300px;
+        padding: 20px;
+        font-size: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+      }
+  
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+  
+      form {
+        display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 18px; /* Increase the font size */
+
+      }
+  
+      input[type="file"] {
+        margin-bottom: 10px;
+      }
+  
+      button {
+        padding: 12px; /* Increase the padding */
+      font-size: 16px; /* Increase the font size */
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      }
+      p{
+        text-align: justify;
+      }
+      button:hover {
+        background-color: #217dbb;
+
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: auto; /* Add this line to push the footer to the bottom */
+        width: 100%;
+      }
+
+      /* Your existing CSS styles */
+
+.container_card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0; /* Adjusted margin for spacing */
+    box-sizing: border-box; /* Include padding and borders in the total width */
+    overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+.card_card {
+    width: calc(33.33% - 20px); /* Adjusted width for three cards with margin */
+    margin: 10px; /* Added margin for spacing between cards */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box; /* Include padding and borders in the total width */
+}
+
+.card_card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card_card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card_card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* results css */
+/* .resultbody {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+}
+
+h1 {
+    color: #333;
+}
+
+.result-container {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.result-malignant {
+    background-color: #ff6666;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.result-normal {
+    background-color: #66ff66;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.result-benign {
+    background-color: #ffff66;
+    color: #333;
+    padding: 10px;
+    border-radius: 4px;
+} */
+
+.resultbody {
+    
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+}
+
+h1 {
+    color: #333;
+}
+
+.result-container {
+    max-width: 400px;
+    padding: 20px;
+    margin-left: 30%;
+    margin-top: -80px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ /* .result-malignant {
+    padding: 10px;
+    text-align: center;
+    
+}  */
+
+/* .result-normal {
+    background-color: #66ff66;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.result-benign {
+    background-color: #ffff66;
+    color: #333;
+    padding: 10px;
+    border-radius: 4px;
+} */
+
+
+/* Your other styles... */
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        
